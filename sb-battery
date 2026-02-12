@@ -5,8 +5,8 @@ capacity=$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null)
 status=$(cat /sys/class/power_supply/BAT0/status 2>/dev/null)
 
 case $status in
-    "Charging") icon="󱟠 ";;
-    "Discharging") icon="󱟞 ";;
+    "Charging") icon="󰂏 ";;
+    "Discharging") icon="󰂌 ";;
     "Full") icon="󰁹 ";;
     *) icon="";;
 esac
@@ -16,3 +16,4 @@ if [ "$capacity" -ge 89 ]; then
 fi
 
 printf "%s %s%%\n" "$icon" "$capacity"
+
